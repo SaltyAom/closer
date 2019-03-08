@@ -34,7 +34,7 @@ generate("000000");
 
 let timer;
 document.getElementById("canvas").onmouseup = () => {
-    console.log("clear");
+    clearTimeout(timer);
 }
 
 document.getElementById("canvas").onmousedown = () => {
