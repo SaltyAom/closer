@@ -9,8 +9,6 @@ const generate = (init) => {
     if(init) color = init;
     ctx.fillStyle = `#${color}`;
     ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-    document.getElementById("result").src = document.getElementById("canvas").toDataURL("image/png");
 }
 
 document.getElementById("code").onkeydown = event => {
