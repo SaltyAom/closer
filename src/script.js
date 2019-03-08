@@ -31,3 +31,19 @@ document.getElementById("code").onchange = evt => {
 }
 
 generate("000000");
+
+let timer;
+document.getElementById("canvas").onmouseup = () => {
+    console.log("clear");
+}
+
+document.getElementById("canvas").onmousedown = () => {
+    timer = window.setTimeout(() => {
+        let image = convertCanvasToImage(document.getElementById("canvas")),
+            anchor = document.createElement('a');
+
+        anchor.setAttribute('href', image.src);
+        anchor.setAttribute('download', 'image.png');
+        anchor.click();
+    },1000);
+}

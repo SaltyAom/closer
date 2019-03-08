@@ -76,7 +76,7 @@ label {
     color: #8e8e93;
 }
 
-h1,h2,div, label {
+h1,h2,div, label, body, html {
     box-sizing:border-box;
     -webkit-user-select: none !important;
     -moz-user-select: none !important;
