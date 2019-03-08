@@ -3,6 +3,9 @@ const generate = (init) => {
         ctx = canvas.getContext("2d"),
         color = document.getElementById("code").value;
 
+    canvas.width = 851;
+    canvas.height = 375;
+
     if(init) color = init;
     ctx.fillStyle = `#${color}`;
     ctx.fillRect(0, 0, canvas.width, canvas.height);
