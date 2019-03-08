@@ -9,10 +9,13 @@ const generate = (init) => {
     if(init) color = init;
     ctx.fillStyle = `#${color}`;
     ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+    document.getElementById("download").href = document.getElementById("canvas").toDataURL("image/png")
+    .replace("image/png", "image/octet-stream");
+    document.getElementById("download").download = `${color}.png`
 }
 
 document.getElementById("code").onkeydown = event => {
-    console.log(event.keyCode);
     if(event.target.value.length >= 6 && (event.keyCode !== 8 && event.keyCode !== 9)) event.target.blur();
     if(event.keyCode !== 65 && event.keyCode !== 66 && event.keyCode !== 67 && event.keyCode !== 68 &&
         event.keyCode !== 69 && event.keyCode !== 70){
@@ -31,19 +34,3 @@ document.getElementById("code").onchange = evt => {
 }
 
 generate("000000");
-
-let timer;
-document.getElementById("canvas").onmouseup = () => {
-    clearTimeout(timer);
-}
-
-document.getElementById("canvas").onmousedown = () => {
-    timer = window.setTimeout(() => {
-        let image = convertCanvasToImage(document.getElementById("canvas")),
-            anchor = document.createElement('a');
-
-        anchor.setAttribute('href', image.src);
-        anchor.setAttribute('download', 'image.png');
-        anchor.click();
-    },1000);
-}
