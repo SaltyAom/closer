@@ -5,9 +5,9 @@ const generate = (init) => {
 
     if(init) color = init;
     ctx.fillStyle = `#${color}`;
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    ctx.fillRect(0, 0, 255, 255);
 
-    document.getElementById("result").src = document.getElementById("canvas").toDataURL("image/png");
+    document.getElementById("result").src = document.getElementById("canvas").toDataURL("image/jpeg");
 }
 
 document.getElementById("code").onkeydown = event => {
