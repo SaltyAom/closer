@@ -3,8 +3,8 @@ const generate = (init) => {
         ctx = canvas.getContext("2d"),
         color = document.getElementById("code").value;
 
-    canvas.width = 720;
-    canvas.height = 720;
+    canvas.width = 2048;
+    canvas.height = 2048;
 
     if(init) color = init;
     ctx.fillStyle = `#${color}`;
