@@ -67,6 +67,12 @@ h2 {
     letter-spacing: .25rem;
 }
 
+#canvas {
+    width:275px;
+    height:275px;
+    display:none;
+}
+
 label {
     position:absolute;
     z-index:-99;
